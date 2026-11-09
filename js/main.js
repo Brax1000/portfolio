@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'BSIT Freshman @ TUP Manila.',
     'Software Engineering Enthusiast.',
     'Curious Algorithmic Problem Solver.',
-    'AWS Student Builder Explorer.',
+    'GDGoC TUP Manila Enthusiast.',
     'Tactical Game & Systems Programmer.'
   ];
   let roleIndex = 0;

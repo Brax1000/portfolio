@@ -28,7 +28,6 @@ braxten-portfolio/
 │
 ├── index.html                   # Main semantic website structure & content
 ├── vercel.json                  # Vercel deployment configuration & caching rules
-├── package.json                 # Optional project descriptor
 ├── README.md                    # Beginner documentation & deployment guide
 │
 ├── css/
