@@ -1,7 +1,7 @@
 /**
  * particles.js
- * High-performance interactive background constellation & glow particles
- * Developed for Braxten Orline P. Urdelas Portfolio
+ * High-performance interactive monochrome starfield & constellation particles
+ * Developed for Braxten Orline P. Urdelas Portfolio (Black & White Edition)
  */
 
 (function() {
@@ -13,24 +13,24 @@
   let height = (canvas.height = window.innerHeight);
 
   let particles = [];
-  const particleCount = Math.min(Math.floor((width * height) / 14000), 75);
-  const maxDistance = 140;
+  const particleCount = Math.min(Math.floor((width * height) / 13000), 80);
+  const maxDistance = 145;
 
   const mouse = {
     x: null,
     y: null,
-    radius: 160
+    radius: 170
   };
 
   class Particle {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.7;
-      this.vy = (Math.random() - 0.5) * 0.7;
-      this.radius = Math.random() * 2 + 1;
-      this.baseAlpha = Math.random() * 0.5 + 0.2;
-      this.color = Math.random() > 0.4 ? 'rgba(56, 189, 248,' : 'rgba(0, 240, 255,';
+      this.vx = (Math.random() - 0.5) * 0.65;
+      this.vy = (Math.random() - 0.5) * 0.65;
+      this.radius = Math.random() * 2 + 1.2;
+      this.baseAlpha = Math.random() * 0.55 + 0.25;
+      this.color = Math.random() > 0.4 ? 'rgba(255, 255, 255,' : 'rgba(220, 220, 220,';
     }
 
     update() {
@@ -60,8 +60,8 @@
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
       ctx.fillStyle = `${this.color} ${this.baseAlpha})`;
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = 'rgba(56, 189, 248, 0.6)';
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = 'rgba(255, 255, 255, 0.6)';
       ctx.fill();
       ctx.shadowBlur = 0;
     }
@@ -82,12 +82,12 @@
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < maxDistance) {
-          const alpha = (1 - dist / maxDistance) * 0.22;
+          const alpha = (1 - dist / maxDistance) * 0.2;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
-          ctx.lineWidth = 0.8;
+          ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
+          ctx.lineWidth = 0.85;
           ctx.stroke();
         }
       }
