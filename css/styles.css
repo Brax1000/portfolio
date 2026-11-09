@@ -1961,6 +1961,48 @@ textarea.form-control {
   max-width: 600px;
 }
 
+.term-difficulty-selector {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.diff-btn {
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: rgba(14, 28, 54, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.diff-btn:hover {
+  background: rgba(56, 189, 248, 0.15);
+  color: #ffffff;
+}
+
+.diff-btn.active {
+  background: rgba(56, 189, 248, 0.25);
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.timer-pulse-danger {
+  color: #ef4444 !important;
+  animation: pulse-danger 0.5s infinite alternate;
+}
+
+@keyframes pulse-danger {
+  from { opacity: 1; text-shadow: 0 0 8px #ef4444; }
+  to { opacity: 0.4; text-shadow: none; }
+}
+
 .terminal-header {
   background: #020712;
   border-bottom: 1px solid rgba(56, 189, 248, 0.2);

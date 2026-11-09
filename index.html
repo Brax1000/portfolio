@@ -609,20 +609,21 @@
               </div>
 
               <h3 class="project-title">C-Four: Bomb Defusal</h3>
-              <p class="project-subtitle">Team GameDev Edition • Featuring Refined C-Four2</p>
+              <p class="project-subtitle">Minigame Tactical Challenge • Team GameDev Edition</p>
 
               <p class="project-description">
-                A collaborative tactical bomb defusal game in C built with BSIT-1C classmates (Braxten, Nell, Pansoy). 
-                Features <strong>C-Four2 (Refined Edition)</strong> powered by Raylib with 80x30 simulated retro CRT terminal themes, 
-                dynamic audio, code rain, and particle physics alongside prototype and modular C99 console architectures.
+                A tactical minigame built in C by our BSIT-1C team (Braxten, Nell, Pansoy). 
+                Players must deduce the secret deactivation code within a chosen difficulty range 
+                <strong>(1-10, 1-50, 1-100, 1-500)</strong> before the live 90-second countdown timer expires. 
+                Features <strong>C-Four2 (Refined Edition)</strong> powered by Raylib with retro 80x30 CRT themes, audio, and dynamic radar clues!
               </p>
 
               <div class="project-tech-stack">
                 <span class="tech-tag"><i class="fa-solid fa-c"></i> C Language</span>
+                <span class="tech-tag"><i class="fa-solid fa-stopwatch"></i> 90s Countdown</span>
+                <span class="tech-tag"><i class="fa-solid fa-arrows-left-right"></i> Dynamic Ranges</span>
                 <span class="tech-tag"><i class="fa-solid fa-gamepad"></i> Raylib Engine</span>
                 <span class="tech-tag"><i class="fa-solid fa-users"></i> BSIT-1C Team</span>
-                <span class="tech-tag"><i class="fa-solid fa-desktop"></i> Retro CRT (80x30)</span>
-                <span class="tech-tag"><i class="fa-solid fa-music"></i> Audio System</span>
               </div>
 
               <div class="project-footer">
@@ -1136,6 +1137,15 @@
       </div>
 
       <div class="modal-body terminal-body-wrapper">
+        <!-- Difficulty Selection (C-Four Threat Levels) -->
+        <div class="term-difficulty-selector">
+          <span style="font-size:0.74rem; color:var(--text-dim); display:flex; align-items:center; margin-right:4px;">Threat Level:</span>
+          <button type="button" class="diff-btn" data-level="0">EASY (1-10)</button>
+          <button type="button" class="diff-btn active" data-level="1">NORMAL (1-50)</button>
+          <button type="button" class="diff-btn" data-level="2">HARD (1-100)</button>
+          <button type="button" class="diff-btn" data-level="3">INSANE (1-500)</button>
+        </div>
+
         <div class="retro-terminal" id="terminalOutput">
           <div class="term-line welcome-line">====================================================</div>
           <div class="term-line welcome-line">   [C-FOUR: LAST CHANCE - TEAM GAMEDEV EDITION]    </div>
@@ -1143,21 +1153,23 @@
           <div class="term-line welcome-line">   Devs: Braxten Urdelas, John Hayden Nell, David Pansoy </div>
           <div class="term-line welcome-line">====================================================</div>
           <div class="term-line">[SYSTEM] Tactical C-Four2 Engine initialized...</div>
-          <div class="term-line">[ALERT] Bomb armed! Deactivation protocol required.</div>
-          <div class="term-line">[RULES] You have 5 defusal attempts. Enter code to test radar clues.</div>
-          <div class="term-line">[HINT] Enter 4 digits (e.g. 1234) and submit code below.</div>
+          <div class="term-line">[ALERT] Bomb armed! Deactivation protocol active.</div>
+          <div class="term-line">[RANGE] Secret number is hidden between <span id="termWelcomeRange" class="highlight-cyan">1 and 50</span>.</div>
+          <div class="term-line">[RULES] Enter your guess! Clues will narrow the boundary before the 90s fuse runs out.</div>
           <div class="term-divider"></div>
         </div>
 
         <div class="terminal-stats-bar">
-          <span class="term-stat"><i class="fa-solid fa-heart-pulse"></i> Attempts Left: <strong id="termAttempts">5</strong></span>
-          <span class="term-stat"><i class="fa-solid fa-stopwatch"></i> Status: <strong id="termStatus" class="highlight-cyan">ACTIVE</strong></span>
-          <button class="btn btn-xs btn-outline-cyan" id="termResetBtn"><i class="fa-solid fa-rotate-right"></i> Restart Simulation</button>
+          <span class="term-stat"><i class="fa-solid fa-arrows-left-right"></i> Range: <strong id="termRange" class="highlight-cyan">1 - 50</strong></span>
+          <span class="term-stat"><i class="fa-solid fa-heart-pulse"></i> Tries: <strong id="termAttempts">7</strong></span>
+          <span class="term-stat"><i class="fa-solid fa-stopwatch"></i> Fuse: <strong id="termTimer" class="highlight-cyan">90s</strong></span>
+          <span class="term-stat">State: <strong id="termStatus" class="highlight-cyan">ARMED</strong></span>
+          <button class="btn btn-xs btn-outline-cyan" id="termResetBtn"><i class="fa-solid fa-rotate-right"></i> Reset</button>
         </div>
 
         <form id="termInputForm" class="term-input-row">
           <span class="term-prompt">agent@c-four:~$</span>
-          <input type="text" id="termInput" maxlength="4" placeholder="Enter 4-digit code..." autocomplete="off">
+          <input type="number" id="termInput" placeholder="Guess a number in range..." autocomplete="off">
           <button type="submit" class="btn btn-sm btn-cyan">DEFUSE</button>
         </form>
 

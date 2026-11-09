@@ -188,33 +188,99 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // =========================================================================
-  // DEMO 2: C-FOUR BOMB DEFUSAL SIMULATOR (TACTICAL C ENGINE)
+  // DEMO 2: C-FOUR BOMB DEFUSAL SIMULATOR (TACTICAL MINIGAME C ENGINE)
   // =========================================================================
   const termOutput = document.getElementById('terminalOutput');
   const termForm = document.getElementById('termInputForm');
   const termInput = document.getElementById('termInput');
   const termAttemptsSpan = document.getElementById('termAttempts');
   const termStatusSpan = document.getElementById('termStatus');
+  const termTimerSpan = document.getElementById('termTimer');
+  const termRangeSpan = document.getElementById('termRange');
+  const termWelcomeRangeSpan = document.getElementById('termWelcomeRange');
   const termResetBtn = document.getElementById('termResetBtn');
+  const diffBtns = document.querySelectorAll('.diff-btn');
 
-  let bombSecretCode = '';
-  let bombAttemptsLeft = 5;
-  let bombDefused = false;
+  const DIFFICULTIES = [
+    { name: "EASY", min: 1, max: 10, attempts: 5 },
+    { name: "NORMAL", min: 1, max: 50, attempts: 7 },
+    { name: "HARD", min: 1, max: 100, attempts: 8 },
+    { name: "INSANE", min: 1, max: 500, attempts: 10 }
+  ];
 
-  function initBombGame() {
-    // Generate 4 unique random digits
-    const digits = ['0','1','2','3','4','5','6','7','8','9'];
-    for (let i = digits.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [digits[i], digits[j]] = [digits[j], digits[i]];
+  let currentDiffIndex = 1; // Default NORMAL (1-50)
+  let secretCode = 0;
+  let lowBound = 1;
+  let highBound = 50;
+  let attemptsLeft = 7;
+  let maxTries = 7;
+  let guessCount = 0;
+  let timerSeconds = 90;
+  let timerInterval = null;
+  let isGameOver = false;
+
+  function stopBombTimer() {
+    if (timerInterval) {
+      clearInterval(timerInterval);
+      timerInterval = null;
     }
-    bombSecretCode = digits.slice(0, 4).join('');
-    bombAttemptsLeft = 5;
-    bombDefused = false;
+  }
 
-    if (termAttemptsSpan) termAttemptsSpan.textContent = bombAttemptsLeft;
+  function startBombTimer() {
+    stopBombTimer();
+    timerInterval = setInterval(() => {
+      if (isGameOver) {
+        stopBombTimer();
+        return;
+      }
+      timerSeconds--;
+      if (termTimerSpan) {
+        termTimerSpan.textContent = `${timerSeconds}s`;
+        if (timerSeconds <= 15) {
+          termTimerSpan.classList.add('timer-pulse-danger');
+        } else {
+          termTimerSpan.classList.remove('timer-pulse-danger');
+        }
+      }
+
+      if (timerSeconds <= 0) {
+        stopBombTimer();
+        isGameOver = true;
+        appendTermLine(`[CRITICAL ALERT] !! FUSE EXPIRED (0s) - BOMB DETONATED !!`, 'danger-line');
+        appendTermLine(`[INTEL] The secret deactivation code was: [${secretCode}]`, 'danger-line');
+        if (termStatusSpan) {
+          termStatusSpan.textContent = 'DETONATED';
+          termStatusSpan.className = 'term-line danger-line';
+        }
+        if (termInput) termInput.disabled = true;
+      }
+    }, 1000);
+  }
+
+  function initBombGame(levelIndex = currentDiffIndex) {
+    stopBombTimer();
+    currentDiffIndex = levelIndex;
+    const diff = DIFFICULTIES[currentDiffIndex];
+    lowBound = diff.min;
+    highBound = diff.max;
+    attemptsLeft = diff.attempts;
+    maxTries = diff.attempts;
+    guessCount = 0;
+    timerSeconds = 90;
+    isGameOver = false;
+
+    // Generate random secret within range
+    secretCode = Math.floor(Math.random() * (diff.max - diff.min + 1)) + diff.min;
+
+    if (termAttemptsSpan) termAttemptsSpan.textContent = attemptsLeft;
+    if (termRangeSpan) termRangeSpan.textContent = `${lowBound} - ${highBound}`;
+    if (termWelcomeRangeSpan) termWelcomeRangeSpan.textContent = `${diff.min} and ${diff.max}`;
+    if (termTimerSpan) {
+      termTimerSpan.textContent = '90s';
+      termTimerSpan.classList.remove('timer-pulse-danger');
+    }
     if (termStatusSpan) {
-      termStatusSpan.textContent = 'ACTIVE';
+      termStatusSpan.textContent = 'ARMED';
       termStatusSpan.className = 'highlight-cyan';
     }
 
@@ -226,17 +292,51 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="term-line welcome-line">   Devs: Braxten Urdelas, John Hayden Nell, David Pansoy </div>
         <div class="term-line welcome-line">====================================================</div>
         <div class="term-line">[SYSTEM] Tactical C-Four2 Engine initialized...</div>
-        <div class="term-line">[ALERT] Bomb armed! Deactivation protocol required.</div>
-        <div class="term-line">[RULES] You have 5 defusal attempts. Enter code to test radar clues.</div>
-        <div class="term-line">[HINT] Enter 4 digits (e.g. 1234) and submit code below.</div>
+        <div class="term-line">[THREAT LEVEL] <strong class="highlight-cyan">${diff.name} (${diff.min} - ${diff.max})</strong> | Max Tries: ${diff.attempts}</div>
+        <div class="term-line">[ALERT] Device armed! 90-second fuse running.</div>
+        <div class="term-line">[MISSION] Enter a number to narrow boundary radar clues.</div>
         <div class="term-divider"></div>
       `;
     }
+
     if (termInput) {
       termInput.value = '';
       termInput.disabled = false;
-      termInput.focus();
+      termInput.placeholder = `Enter number (${diff.min} - ${diff.max})...`;
+      termInput.min = diff.min;
+      termInput.max = diff.max;
+      setTimeout(() => termInput.focus(), 200);
     }
+
+    // Update active button state
+    diffBtns.forEach(btn => {
+      const lvl = parseInt(btn.getAttribute('data-level'), 10);
+      if (lvl === currentDiffIndex) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    startBombTimer();
+  }
+
+  // Difficulty switch buttons
+  diffBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lvl = parseInt(btn.getAttribute('data-level'), 10);
+      initBombGame(lvl);
+    });
+  });
+
+  const bombCloseBtn = document.getElementById('closeBombModal');
+  if (bombCloseBtn) {
+    bombCloseBtn.addEventListener('click', stopBombTimer);
+  }
+  if (bombModal) {
+    bombModal.addEventListener('click', (e) => {
+      if (e.target === bombModal) stopBombTimer();
+    });
   }
 
   function appendTermLine(text, className = '') {
@@ -251,63 +351,76 @@ document.addEventListener('DOMContentLoaded', () => {
   if (termForm) {
     termForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      if (bombDefused || bombAttemptsLeft <= 0) return;
+      if (isGameOver || attemptsLeft <= 0 || timerSeconds <= 0) return;
 
-      const guess = termInput.value.trim();
-      if (guess.length !== 4 || isNaN(guess)) {
-        appendTermLine(`[ERROR] Invalid entry: "${guess}". Must be 4 digits.`, 'danger-line');
+      const rawGuess = termInput.value.trim();
+      if (!rawGuess || isNaN(rawGuess)) {
+        appendTermLine(`[ERROR] Please enter a valid number!`, 'danger-line');
+        return;
+      }
+
+      const guess = parseInt(rawGuess, 10);
+      const diff = DIFFICULTIES[currentDiffIndex];
+
+      if (guess < diff.min || guess > diff.max) {
+        appendTermLine(`[OUT OF BOUNDS] ${guess} is outside mission range (${diff.min} - ${diff.max})!`, 'danger-line');
         termInput.value = '';
         return;
       }
 
-      appendTermLine(`> Guess submitted: [${guess}]`);
+      guessCount++;
+      appendTermLine(`> Operative guessed: [${guess}]`);
 
-      if (guess === bombSecretCode) {
-        bombDefused = true;
-        appendTermLine(`[SUCCESS] *** CODE ACCEPTED! BOMB SUCCESSFULLY DEFUSED! ***`, 'success-line');
-        appendTermLine(`[MISSION ACCOMPLISHED] Great tactical work, Agent!`, 'success-line');
+      if (guess === secretCode) {
+        isGameOver = true;
+        stopBombTimer();
+        const score = attemptsLeft * 150 + timerSeconds * 10 + (currentDiffIndex + 1) * 100;
+        const ratio = guessCount / maxTries;
+        const stars = ratio <= 0.4 ? "⭐⭐⭐ [3/3 STARS]" : (ratio <= 0.7 ? "⭐⭐ [2/3 STARS]" : "⭐ [1/3 STARS]");
+
+        appendTermLine(`[SUCCESS] *** CODE CONFIRMED! BOMB DEFUSED! ***`, 'success-line');
+        appendTermLine(`[INTEL] Outstanding work! Time left: ${timerSeconds}s | Guesses: ${guessCount}`, 'success-line');
+        appendTermLine(`[RATING] Score: ${score} PTS | Performance: ${stars}`, 'clue-line');
+
         if (termStatusSpan) {
-          termStatusSpan.textContent = 'DEFUSED';
+          termStatusSpan.textContent = 'DEFUSED!';
           termStatusSpan.className = 'term-line success-line';
         }
         termInput.disabled = true;
         return;
       }
 
-      // Calculate matches
-      let correctPosition = 0;
-      let correctDigitWrongPos = 0;
+      attemptsLeft--;
+      if (termAttemptsSpan) termAttemptsSpan.textContent = attemptsLeft;
 
-      for (let i = 0; i < 4; i++) {
-        if (guess[i] === bombSecretCode[i]) {
-          correctPosition++;
-        } else if (bombSecretCode.includes(guess[i])) {
-          correctDigitWrongPos++;
-        }
+      if (guess < secretCode) {
+        lowBound = Math.max(lowBound, guess + 1);
+        appendTermLine(`[RADAR SCAN] >> TOO LOW! << Secret is HIGHER than ${guess}.`, 'clue-line');
+      } else {
+        highBound = Math.min(highBound, guess - 1);
+        appendTermLine(`[RADAR SCAN] >> TOO HIGH! << Secret is LOWER than ${guess}.`, 'clue-line');
       }
 
-      bombAttemptsLeft--;
-      if (termAttemptsSpan) termAttemptsSpan.textContent = bombAttemptsLeft;
+      appendTermLine(`[TARGET BOUNDS] Narrowed Range: [${lowBound} to ${highBound}] | Tries Left: ${attemptsLeft}`, 'welcome-line');
+      if (termRangeSpan) termRangeSpan.textContent = `${lowBound} - ${highBound}`;
 
-      appendTermLine(`[RADAR SCAN] Correct Digit & Position: ${correctPosition} | Correct Digit Wrong Pos: ${correctDigitWrongPos}`, 'clue-line');
-
-      if (bombAttemptsLeft <= 0) {
-        appendTermLine(`[DETONATION ALERT] Attempts exhausted! Bomb exploded!`, 'danger-line');
-        appendTermLine(`[INTEL] The defusal code was: [${bombSecretCode}]`, 'danger-line');
+      if (attemptsLeft <= 0) {
+        isGameOver = true;
+        stopBombTimer();
+        appendTermLine(`[DETONATION ALERT] !! TRIES EXHAUSTED (BOOM) !! Bomb exploded!`, 'danger-line');
+        appendTermLine(`[INTEL] The secret deactivation code was: [${secretCode}]`, 'danger-line');
         if (termStatusSpan) {
           termStatusSpan.textContent = 'DETONATED';
           termStatusSpan.className = 'term-line danger-line';
         }
         termInput.disabled = true;
-      } else {
-        appendTermLine(`[WARNING] ${bombAttemptsLeft} attempts remaining! Keep analyzing.`, 'clue-line');
       }
 
       termInput.value = '';
     });
   }
 
-  if (termResetBtn) termResetBtn.addEventListener('click', initBombGame);
+  if (termResetBtn) termResetBtn.addEventListener('click', () => initBombGame(currentDiffIndex));
   initBombGame();
 
 
