@@ -1,0 +1,20 @@
+{
+  "name": "braxten-portfolio",
+  "version": "1.0.0",
+  "description": "Professional Blue Glassmorphism Portfolio for Braxten Orline P. Urdelas",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Static build ready'"
+  },
+  "keywords": [
+    "portfolio",
+    "braxten-urdelas",
+    "glassmorphism",
+    "bsit",
+    "tup-manila",
+    "vercel"
+  ],
+  "author": "Braxten Orline P. Urdelas",
+  "license": "MIT"
+}

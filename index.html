@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Braxten Orline P. Urdelas | BSIT Freshman & Aspiring Software Engineer</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Portfolio of Braxten Orline P. Urdelas - BSIT Freshman at TUP Manila, aspiring software engineer, and technology enthusiast passionate about web development, systems programming, and AWS.">
+  <meta name="keywords" content="Braxten Urdelas, BSIT, TUP Manila, Software Engineer, Web Developer, C, C++, JavaScript, Python, Portfolio">
+  <meta name="author" content="Braxten Orline P. Urdelas">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Braxten Orline P. Urdelas | Portfolio">
+  <meta property="og:description" content="BSIT Freshman at TUP Manila | Projects in C, C++, Python, JavaScript & Web Development.">
+  <meta property="og:image" content="assets/profile.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Ambient Background Glows & Particles Canvas -->
+  <canvas id="particles-canvas"></canvas>
+  <div class="ambient-glow glow-top-left"></div>
+  <div class="ambient-glow glow-bottom-right"></div>
+  <div class="ambient-glow glow-center"></div>
+
+  <!-- Interactive Custom Cursor Glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar glass-card">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">Brax<span class="highlight">1000</span></span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a></li>
+        <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a></li>
+        <li><a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Projects</a></li>
+        <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Journey</a></li>
+        <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="assets/Braxten_Urdelas_Resume.pdf" download="Braxten_Urdelas_Resume.pdf" class="btn btn-sm btn-outline-cyan resume-btn">
+          <i class="fa-solid fa-file-arrow-down"></i>
+          <span>Resume</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        
+        <!-- Left Content -->
+        <div class="hero-content">
+          <div class="hero-badge glass-badge animate-fade-in">
+            <span class="status-dot"></span>
+            <span>Available for Collaborative Projects & Internships</span>
+          </div>
+
+          <h1 class="hero-title animate-fade-in-up delay-1">
+            Hi, I'm <br>
+            <span class="gradient-text glow-text">Braxten Orline</span> <br>
+            <span class="surname">P. Urdelas</span>
+          </h1>
+
+          <div class="hero-typewriter animate-fade-in-up delay-2">
+            <span class="type-prefix">I am a </span>
+            <span class="type-dynamic" id="typewriter"></span>
+            <span class="cursor-blink">|</span>
+          </div>
+
+          <p class="hero-desc animate-fade-in-up delay-3">
+            BSIT Freshman at <strong>Technological University of the Philippines - Manila</strong>. 
+            Passionate about crafting intuitive web experiences, exploring low-level algorithms, 
+            and building software that empowers communities.
+          </p>
+
+          <!-- Call to action buttons -->
+          <div class="hero-cta animate-fade-in-up delay-4">
+            <a href="#projects" class="btn btn-primary btn-glow">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Explore My Work</span>
+            </a>
+            <a href="#contact" class="btn btn-glass">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Connect With Me</span>
+            </a>
+          </div>
+
+          <!-- Social Links Bar -->
+          <div class="hero-socials animate-fade-in-up delay-5">
+            <span class="social-label">Connect:</span>
+            <div class="social-icons">
+              <a href="https://github.com/Brax1000" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub Profile">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/braxten-orline-urdelas-58003241a/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61590660964353" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook Profile">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="mailto:braxtenorlineurdelas@gmail.com" class="social-link" title="Send Email">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="tel:+639107159217" class="social-link" title="Call or Message Phone">
+                <i class="fa-solid fa-phone"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Profile Visual with 3D Tilt & Glass Aura -->
+        <div class="hero-visual animate-fade-in-up delay-2">
+          <div class="profile-card-wrapper" id="profileCardWrapper">
+            <div class="profile-glass-card glass-card">
+              
+              <!-- Cyber holographic corner accents -->
+              <div class="cyber-corner top-left"></div>
+              <div class="cyber-corner top-right"></div>
+              <div class="cyber-corner bottom-left"></div>
+              <div class="cyber-corner bottom-right"></div>
+
+              <div class="profile-image-container">
+                <img src="assets/profile.jpg" alt="Braxten Orline P. Urdelas" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'">
+                <div class="profile-overlay-glow"></div>
+              </div>
+
+              <div class="profile-card-info">
+                <h3 class="profile-name">Braxten Orline Urdelas</h3>
+                <p class="profile-role"><i class="fa-solid fa-building-columns"></i> TUP Manila • BSIT Freshman</p>
+                <div class="profile-tags">
+                  <span class="badge-mini"><i class="fa-solid fa-code"></i> C / C++ / Python</span>
+                  <span class="badge-mini"><i class="fa-brands fa-js"></i> JS / Web</span>
+                  <span class="badge-mini"><i class="fa-brands fa-aws"></i> AWS Explorer</span>
+                </div>
+              </div>
+
+              <!-- Floating Floating Mini Badges -->
+              <div class="floating-stat-badge stat-top glass-card">
+                <div class="stat-icon"><i class="fa-solid fa-medal"></i></div>
+                <div class="stat-meta">
+                  <span class="stat-num">Top 35th</span>
+                  <span class="stat-desc">STEM Graduate</span>
+                </div>
+              </div>
+
+              <div class="floating-stat-badge stat-bottom glass-card">
+                <div class="stat-icon"><i class="fa-solid fa-code-branch"></i></div>
+                <div class="stat-meta">
+                  <span class="stat-num">4+ Projects</span>
+                  <span class="stat-desc">Open Source</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#about" class="scroll-down-indicator" aria-label="Scroll to About section">
+        <div class="mouse-icon">
+          <div class="mouse-wheel"></div>
+        </div>
+        <span>Explore</span>
+      </a>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-subtitle">
+            <i class="fa-solid fa-terminal"></i>
+            <span>Who I Am</span>
+          </div>
+          <h2 class="section-title">About <span class="gradient-text">Braxten</span></h2>
+          <p class="section-desc">Passionate beginner turning curiosity into code, one project at a time.</p>
+        </div>
+
+        <div class="about-grid">
+          
+          <!-- Narrative Glass Card -->
+          <div class="about-narrative glass-card">
+            <div class="card-header-styled">
+              <div class="window-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="window-title">braxten_bio.md</div>
+            </div>
+            
+            <div class="narrative-body">
+              <p class="lead-text">
+                I am a <strong>BSIT Freshman at the Technological University of the Philippines - Manila (TUP Manila)</strong> 
+                with a steadfast commitment to software engineering, algorithmic logic, and web development.
+              </p>
+              <p>
+                As an aspiring IT professional, I believe the fastest way to master code is by building real, functioning applications. 
+                From building command-line games and scientific calculators to diving into systems programming in C and C++, 
+                I channel curiosity into hands-on problem solving.
+              </p>
+              <p>
+                Currently, I am eager to participate in the <strong>AWS Student Builder Group</strong>, collaborate with fellow ambitious students, 
+                and build high-impact projects that empower users and contribute positively to our community.
+              </p>
+
+              <div class="about-meta-list">
+                <div class="meta-item">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span><strong>Location:</strong> Manila, Philippines</span>
+                </div>
+                <div class="meta-item">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span><strong>Email:</strong> braxtenorlineurdelas@gmail.com</span>
+                </div>
+                <div class="meta-item">
+                  <i class="fa-solid fa-phone"></i>
+                  <span><strong>Phone:</strong> +63 910 715 9217</span>
+                </div>
+                <div class="meta-item">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                  <span><strong>University:</strong> TUP Manila (BSIT)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Highlight Cards Column -->
+          <div class="about-cards-column">
+            
+            <div class="stat-highlight-card glass-card">
+              <div class="highlight-icon blue-gradient-box">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <div class="highlight-info">
+                <h4>Hands-On Builder</h4>
+                <p>Constructing projects in C, C++, JavaScript, and Python to master low-level memory and high-level UX.</p>
+              </div>
+            </div>
+
+            <div class="stat-highlight-card glass-card">
+              <div class="highlight-icon cyan-gradient-box">
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+              <div class="highlight-info">
+                <h4>AWS Student Explorer</h4>
+                <p>Eager to harness cloud infrastructure, serverless architectures, and scalable cloud solutions.</p>
+              </div>
+            </div>
+
+            <div class="stat-highlight-card glass-card">
+              <div class="highlight-icon indigo-gradient-box">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div class="highlight-info">
+                <h4>Academic Excellence</h4>
+                <p>STEM Graduate with Honors and Top 35th rank, proving consistency and dedication to excellence.</p>
+              </div>
+            </div>
+
+            <div class="stat-highlight-card glass-card">
+              <div class="highlight-icon teal-gradient-box">
+                <i class="fa-solid fa-users-gear"></i>
+              </div>
+              <div class="highlight-info">
+                <h4>Collaborative Spirit</h4>
+                <p>Thriving in student team settings, open-source communities, and active technical peer learning.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-subtitle">
+            <i class="fa-solid fa-microchip"></i>
+            <span>Technical Capabilities</span>
+          </div>
+          <h2 class="section-title">Skills & <span class="gradient-text">Tech Stack</span></h2>
+          <p class="section-desc">The languages, frameworks, fundamentals, and developer tools I actively build with.</p>
+        </div>
+
+        <div class="skills-grid">
+          
+          <!-- Programming Languages -->
+          <div class="skill-category-card glass-card">
+            <div class="category-header">
+              <div class="category-icon-wrapper">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Programming Languages</h3>
+                <p class="category-desc">Multi-paradigm logic & syntax</p>
+              </div>
+            </div>
+            
+            <div class="skill-items-grid">
+              <div class="skill-pill">
+                <i class="fa-brands fa-js icon-js"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-level">ES6+ / Web DOM</span>
+                </div>
+              </div>
+
+              <div class="skill-pill">
+                <i class="fa-brands fa-python icon-py"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">Python</span>
+                  <span class="skill-level">Game & Script Logic</span>
+                </div>
+              </div>
+
+              <div class="skill-pill">
+                <span class="custom-badge-icon c-icon">C</span>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">C Language</span>
+                  <span class="skill-level">Control Logic & I/O</span>
+                </div>
+              </div>
+
+              <div class="skill-pill">
+                <span class="custom-badge-icon cpp-icon">C++</span>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">C++</span>
+                  <span class="skill-level">OOP & Operations</span>
+                </div>
+              </div>
+
+              <div class="skill-pill">
+                <i class="fa-brands fa-java icon-java"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">Java</span>
+                  <span class="skill-level">Fundamentals</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Web & UI Development -->
+          <div class="skill-category-card glass-card">
+            <div class="category-header">
+              <div class="category-icon-wrapper">
+                <i class="fa-solid fa-palette"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Web & Interface</h3>
+                <p class="category-desc">Crafting responsive frontends</p>
+              </div>
+            </div>
+
+            <div class="skill-items-grid">
+              <div class="skill-pill">
+                <i class="fa-brands fa-html5 icon-html"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">HTML5</span>
+                  <span class="skill-level">Semantic Markup</span>
+                </div>
+              </div>
+
+              <div class="skill-pill">
+                <i class="fa-brands fa-css3-alt icon-css"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">CSS3</span>
+                  <span class="skill-level">Flex, Grid & Animations</span>
+                </div>
+              </div>
+
+              <div class="skill-pill">
+                <i class="fa-solid fa-wand-magic-sparkles icon-glass"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">Glassmorphism</span>
+                  <span class="skill-level">Backdrop Blur & Glows</span>
+                </div>
+              </div>
+
+              <div class="skill-pill">
+                <i class="fa-solid fa-mobile-screen-button icon-resp"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">Responsive Design</span>
+                  <span class="skill-level">Mobile-First Layouts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fundamentals & Computer Science -->
+          <div class="skill-category-card glass-card">
+            <div class="category-header">
+              <div class="category-icon-wrapper">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Core Fundamentals</h3>
+                <p class="category-desc">Algorithmic problem solving</p>
+              </div>
+            </div>
+
+            <div class="skill-items-grid">
+              <div class="skill-pill">
+                <i class="fa-solid fa-network-wired"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">Conditionals & Loops</span>
+                  <span class="skill-level">Flow Optimization</span>
+                </div>
+              </div>
+
+              <div class="skill-pill">
+                <i class="fa-solid fa-gears"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">Problem Solving</span>
+                  <span class="skill-level">Analytical Breakdown</span>
+                </div>
+              </div>
+
+              <div class="skill-pill">
+                <i class="fa-solid fa-gamepad"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">Game Architecture</span>
+                  <span class="skill-level">State & Randomization</span>
+                </div>
+              </div>
+
+              <div class="skill-pill">
+                <i class="fa-solid fa-keyboard"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">I/O Handling</span>
+                  <span class="skill-level">CLI & Keyboard Events</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Cloud Exploration -->
+          <div class="skill-category-card glass-card">
+            <div class="category-header">
+              <div class="category-icon-wrapper">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Tools & Cloud Growth</h3>
+                <p class="category-desc">Modern developer toolkit</p>
+              </div>
+            </div>
+
+            <div class="skill-items-grid">
+              <div class="skill-pill">
+                <i class="fa-brands fa-git-alt icon-git"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">Git & GitHub</span>
+                  <span class="skill-level">Version Management</span>
+                </div>
+              </div>
+
+              <div class="skill-pill">
+                <i class="fa-brands fa-aws icon-aws"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">AWS Student Builder</span>
+                  <span class="skill-level">Cloud Foundations</span>
+                </div>
+              </div>
+
+              <div class="skill-pill">
+                <i class="fa-solid fa-triangle-exclamation icon-vercel"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">Vercel</span>
+                  <span class="skill-level">Cloud Deployment</span>
+                </div>
+              </div>
+
+              <div class="skill-pill">
+                <i class="fa-solid fa-terminal"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">CLI & PowerShell</span>
+                  <span class="skill-level">Command Line Savvy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-subtitle">
+            <i class="fa-solid fa-rocket"></i>
+            <span>Interactive Works</span>
+          </div>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          <p class="section-desc">Selected projects demonstrating programming logic, interactive frontend design, and game simulation.</p>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects (4)</button>
+          <button class="filter-btn" data-filter="web">Web & Frontend</button>
+          <button class="filter-btn" data-filter="systems">C / C++ Systems</button>
+          <button class="filter-btn" data-filter="python">Python & Games</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+
+          <!-- PROJECT 1: C.C CALCULATOR -->
+          <div class="project-card glass-card tilt-card" data-category="web">
+            <div class="project-card-glow"></div>
+            
+            <div class="project-preview-header">
+              <div class="project-tag-badge web-tag">
+                <i class="fa-brands fa-js"></i> Web Application
+              </div>
+              <div class="project-actions-quick">
+                <button class="icon-action-btn open-calc-demo" title="Try Live Calculator Demo">
+                  <i class="fa-solid fa-play"></i> Live Demo
+                </button>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-icon-visual blue-accent">
+                <i class="fa-solid fa-calculator"></i>
+              </div>
+
+              <h3 class="project-title">C.C Calculator</h3>
+              <p class="project-subtitle">Scientific Calculator & Expression Parser</p>
+
+              <p class="project-description">
+                Developed a full-featured scientific calculator supporting basic and advanced mathematical operations. 
+                Features dynamic expression handling, keyboard shortcuts, robust error checking, and a custom futuristic user interface.
+              </p>
+
+              <div class="project-tech-stack">
+                <span class="tech-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
+                <span class="tech-tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                <span class="tech-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                <span class="tech-tag"><i class="fa-solid fa-keyboard"></i> Event Listeners</span>
+              </div>
+
+              <div class="project-footer">
+                <a href="https://github.com/Brax1000/C.C-Calculator" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan">
+                  <i class="fa-brands fa-github"></i>
+                  <span>Source Code</span>
+                </a>
+                <button class="btn btn-sm btn-primary open-calc-demo">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  <span>Test Calculator</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: C-FOUR BOMB DEFUSAL SIMULATOR -->
+          <div class="project-card glass-card tilt-card" data-category="systems">
+            <div class="project-card-glow"></div>
+            
+            <div class="project-preview-header">
+              <div class="project-tag-badge c-tag">
+                <i class="fa-solid fa-microchip"></i> C Language Game
+              </div>
+              <div class="project-actions-quick">
+                <button class="icon-action-btn open-bomb-demo" title="Play Live Terminal Game">
+                  <i class="fa-solid fa-terminal"></i> Play Simulator
+                </button>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-icon-visual red-accent">
+                <i class="fa-solid fa-bomb"></i>
+              </div>
+
+              <h3 class="project-title">C-Four: Bomb Defusal Simulator</h3>
+              <p class="project-subtitle">Tactical Console-Based Strategy Game</p>
+
+              <p class="project-description">
+                An engaging console game created in C featuring interactive countdown mechanics, dynamic randomized security codes, 
+                multiple difficulty tiers, limited defusal attempts, and structured procedural game loop logic.
+              </p>
+
+              <div class="project-tech-stack">
+                <span class="tech-tag"><i class="fa-solid fa-c"></i> C Programming</span>
+                <span class="tech-tag"><i class="fa-solid fa-shuffle"></i> Pseudo-Randomness</span>
+                <span class="tech-tag"><i class="fa-solid fa-terminal"></i> Console I/O</span>
+                <span class="tech-tag"><i class="fa-solid fa-gamepad"></i> Game Loop Logic</span>
+              </div>
+
+              <div class="project-footer">
+                <a href="https://github.com/Brax1000/C-Four---Bomb-Defusal-Simulator" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan">
+                  <i class="fa-brands fa-github"></i>
+                  <span>Source Code</span>
+                </a>
+                <button class="btn btn-sm btn-primary open-bomb-demo">
+                  <i class="fa-solid fa-play"></i>
+                  <span>Launch Terminal</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: BASIC CALCULATOR (C++) -->
+          <div class="project-card glass-card tilt-card" data-category="systems">
+            <div class="project-card-glow"></div>
+            
+            <div class="project-preview-header">
+              <div class="project-tag-badge cpp-tag">
+                <i class="fa-solid fa-code"></i> C++ Application
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-icon-visual indigo-accent">
+                <i class="fa-solid fa-square-root-variable"></i>
+              </div>
+
+              <h3 class="project-title">Basic Calculator</h3>
+              <p class="project-subtitle">Command-Line Arithmetic Processing Engine</p>
+
+              <p class="project-description">
+                Engineered a performant command-line arithmetic calculator in C++ to practice fundamental programming structures, 
+                user input parsing, operator precedence, type safety, and modular function decomposition.
+              </p>
+
+              <div class="project-tech-stack">
+                <span class="tech-tag"><i class="fa-solid fa-laptop-code"></i> C++</span>
+                <span class="tech-tag"><i class="fa-solid fa-plus-minus"></i> Arithmetic Operations</span>
+                <span class="tech-tag"><i class="fa-solid fa-shield-halved"></i> Input Validation</span>
+                <span class="tech-tag"><i class="fa-solid fa-terminal"></i> CLI</span>
+              </div>
+
+              <div class="project-footer">
+                <a href="https://github.com/Brax1000/BasicCalc_CPP" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan btn-full">
+                  <i class="fa-brands fa-github"></i>
+                  <span>View Repository on GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 4: HANGMAN GAME (PYTHON) -->
+          <div class="project-card glass-card tilt-card" data-category="python">
+            <div class="project-card-glow"></div>
+            
+            <div class="project-preview-header">
+              <div class="project-tag-badge py-tag">
+                <i class="fa-brands fa-python"></i> Python Game
+              </div>
+              <div class="project-actions-quick">
+                <button class="icon-action-btn open-hangman-demo" title="Play Quick Hangman Round">
+                  <i class="fa-solid fa-font"></i> Play Word Game
+                </button>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-icon-visual teal-accent">
+                <i class="fa-solid fa-puzzle-piece"></i>
+              </div>
+
+              <h3 class="project-title">Hangman Game</h3>
+              <p class="project-subtitle">Interactive Word-Guessing State Machine</p>
+
+              <p class="project-description">
+                Constructed a classic terminal Hangman game in Python to reinforce game state management, 
+                string manipulation, letter guessing history, life counters, and dynamic ASCII art rendering.
+              </p>
+
+              <div class="project-tech-stack">
+                <span class="tech-tag"><i class="fa-brands fa-python"></i> Python 3</span>
+                <span class="tech-tag"><i class="fa-solid fa-font"></i> String Algorithms</span>
+                <span class="tech-tag"><i class="fa-solid fa-diagram-project"></i> State Machine</span>
+                <span class="tech-tag"><i class="fa-solid fa-heart"></i> Life Counter</span>
+              </div>
+
+              <div class="project-footer">
+                <a href="https://github.com/Brax1000/Hangman-Game-in-Python" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan">
+                  <i class="fa-brands fa-github"></i>
+                  <span>Source Code</span>
+                </a>
+                <button class="btn btn-sm btn-primary open-hangman-demo">
+                  <i class="fa-solid fa-play"></i>
+                  <span>Play Hangman</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- GitHub Profile Banner -->
+        <div class="github-cta-banner glass-card">
+          <div class="github-cta-content">
+            <div class="github-icon-large">
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <div>
+              <h3>Explore More on GitHub</h3>
+              <p>Check out my active commits, repositories, and open source exploration at <strong>github.com/Brax1000</strong>.</p>
+            </div>
+          </div>
+          <a href="https://github.com/Brax1000" target="_blank" rel="noopener noreferrer" class="btn btn-cyan btn-glow">
+            <span>Visit @Brax1000</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION & ACHIEVEMENTS SECTION -->
+    <section id="education" class="section education-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-subtitle">
+            <i class="fa-solid fa-compass"></i>
+            <span>Academic Pathway</span>
+          </div>
+          <h2 class="section-title">Education & <span class="gradient-text">Milestones</span></h2>
+          <p class="section-desc">My academic foundation and proven track record of excellence.</p>
+        </div>
+
+        <div class="education-grid">
+          
+          <!-- Timeline Column -->
+          <div class="timeline-column">
+            <h3 class="column-heading"><i class="fa-solid fa-graduation-cap"></i> Education Timeline</h3>
+            
+            <div class="timeline-container">
+              
+              <!-- Timeline Item 1 -->
+              <div class="timeline-item">
+                <div class="timeline-dot current"></div>
+                <div class="timeline-content glass-card">
+                  <span class="timeline-period current-badge">2026 - Present • CURRENT</span>
+                  <h4 class="timeline-degree">Bachelor of Science in Information Technology (BSIT)</h4>
+                  <p class="timeline-institution">
+                    <i class="fa-solid fa-university"></i> Technological University of the Philippines - Manila
+                  </p>
+                  <p class="timeline-desc">
+                    Freshman year focusing on computer programming foundations, algorithm design, software methodologies, 
+                    and active participation in the student developer ecosystem.
+                  </p>
+                  <div class="timeline-highlights">
+                    <span class="mini-tag">BSIT Freshman</span>
+                    <span class="mini-tag">TUP Manila</span>
+                    <span class="mini-tag">AWS Student Builder</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Timeline Item 2 -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                  <span class="timeline-period">2022 - 2026</span>
+                  <h4 class="timeline-degree">STEM Strand (Science, Technology, Engineering & Math)</h4>
+                  <p class="timeline-institution">
+                    <i class="fa-solid fa-school"></i> Dalandanan National High School
+                  </p>
+                  <p class="timeline-desc">
+                    Completed comprehensive Senior High School STEM education with rigorous training in mathematics, 
+                    empirical sciences, and preliminary computing logic.
+                  </p>
+                  <div class="timeline-highlights">
+                    <span class="mini-tag honor-tag"><i class="fa-solid fa-award"></i> With Honors</span>
+                    <span class="mini-tag honor-tag"><i class="fa-solid fa-trophy"></i> Top 35th Graduate</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Achievements & Goals Column -->
+          <div class="milestones-column">
+            
+            <!-- Achievements Box -->
+            <div class="milestone-block">
+              <h3 class="column-heading"><i class="fa-solid fa-trophy"></i> Key Achievements</h3>
+              
+              <div class="achievement-card glass-card">
+                <div class="achievement-icon gold">
+                  <i class="fa-solid fa-medal"></i>
+                </div>
+                <div class="achievement-text">
+                  <h4>STEM Graduate with Academic Honors</h4>
+                  <p>Recognized for outstanding academic diligence and consistent high performance throughout the STEM program.</p>
+                </div>
+              </div>
+
+              <div class="achievement-card glass-card">
+                <div class="achievement-icon cyan">
+                  <i class="fa-solid fa-award"></i>
+                </div>
+                <div class="achievement-text">
+                  <h4>Batch 2025–2026 Top 35th Graduate</h4>
+                  <p>Graduated among the top 35 students in the entire graduating batch at Dalandanan National High School.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Future Goals Roadmap -->
+            <div class="milestone-block">
+              <h3 class="column-heading"><i class="fa-solid fa-bullseye"></i> Career Goals & Vision</h3>
+              
+              <div class="goals-card glass-card">
+                <ul class="goals-list">
+                  <li>
+                    <span class="goal-bullet"><i class="fa-solid fa-check"></i></span>
+                    <div>
+                      <strong>Solid IT Foundation:</strong> Master core software engineering principles, algorithms, and data structures.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="goal-bullet"><i class="fa-solid fa-check"></i></span>
+                    <div>
+                      <strong>Continuous Growth:</strong> Rapidly improve technical depth and problem-solving through daily code practices.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="goal-bullet"><i class="fa-solid fa-check"></i></span>
+                    <div>
+                      <strong>Hands-on Experience:</strong> Seek internships, collaborate in teamwork environments, and build production-ready apps.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="goal-bullet"><i class="fa-solid fa-check"></i></span>
+                    <div>
+                      <strong>Explore Diverse Tech:</strong> Delve into cloud computing (AWS), game development, and full-stack ecosystems.
+                    </div>
+                  </li>
+                  <li>
+                    <span class="goal-bullet"><i class="fa-solid fa-check"></i></span>
+                    <div>
+                      <strong>Global Tech Impact:</strong> Build software solutions that empower organizations and give back to society.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-subtitle">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Get In Touch</span>
+          </div>
+          <h2 class="section-title">Let's <span class="gradient-text">Collaborate</span></h2>
+          <p class="section-desc">Have an opportunity, student project, question, or just want to say hi? My inbox is always open!</p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Info Hub -->
+          <div class="contact-info-panel glass-card">
+            <h3>Contact Information</h3>
+            <p>Feel free to reach out through any of these direct communication channels.</p>
+
+            <div class="contact-methods">
+              
+              <!-- Email Item -->
+              <div class="contact-method-item">
+                <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="method-content">
+                  <span class="method-label">Direct Email</span>
+                  <a href="mailto:braxtenorlineurdelas@gmail.com" class="method-value">braxtenorlineurdelas@gmail.com</a>
+                </div>
+                <button class="copy-btn" data-copy="braxtenorlineurdelas@gmail.com" title="Copy Email">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+
+              <!-- Phone Item -->
+              <div class="contact-method-item">
+                <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="method-content">
+                  <span class="method-label">Phone & SMS</span>
+                  <a href="tel:+639107159217" class="method-value">+63 910 715 9217</a>
+                </div>
+                <button class="copy-btn" data-copy="+639107159217" title="Copy Phone Number">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+
+              <!-- GitHub Item -->
+              <div class="contact-method-item">
+                <div class="method-icon"><i class="fa-brands fa-github"></i></div>
+                <div class="method-content">
+                  <span class="method-label">GitHub</span>
+                  <a href="https://github.com/Brax1000" target="_blank" rel="noopener noreferrer" class="method-value">github.com/Brax1000</a>
+                </div>
+                <a href="https://github.com/Brax1000" target="_blank" rel="noopener noreferrer" class="external-link-btn" title="Open GitHub">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+
+              <!-- LinkedIn Item -->
+              <div class="contact-method-item">
+                <div class="method-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div class="method-content">
+                  <span class="method-label">LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/braxten-orline-urdelas-58003241a/" target="_blank" rel="noopener noreferrer" class="method-value">Braxten Orline Urdelas</a>
+                </div>
+                <a href="https://www.linkedin.com/in/braxten-orline-urdelas-58003241a/" target="_blank" rel="noopener noreferrer" class="external-link-btn" title="Open LinkedIn">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+
+              <!-- Facebook Item -->
+              <div class="contact-method-item">
+                <div class="method-icon"><i class="fa-brands fa-facebook-f"></i></div>
+                <div class="method-content">
+                  <span class="method-label">Facebook</span>
+                  <a href="https://www.facebook.com/profile.php?id=61590660964353" target="_blank" rel="noopener noreferrer" class="method-value">Braxten Urdelas Profile</a>
+                </div>
+                <a href="https://www.facebook.com/profile.php?id=61590660964353" target="_blank" rel="noopener noreferrer" class="external-link-btn" title="Open Facebook">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Resume Download Callout -->
+            <div class="resume-download-callout">
+              <div class="callout-icon"><i class="fa-solid fa-file-pdf"></i></div>
+              <div class="callout-text">
+                <strong>Need a copy of my Resume?</strong>
+                <span>Download my complete resume PDF instantly.</span>
+              </div>
+              <a href="assets/Braxten_Urdelas_Resume.pdf" download="Braxten_Urdelas_Resume.pdf" class="btn btn-sm btn-cyan">
+                <i class="fa-solid fa-download"></i> Download
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Interactive Message Form -->
+          <div class="contact-form-panel glass-card">
+            <h3>Send a Message</h3>
+            <p>Leave a note here to send directly to my email inbox.</p>
+
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="formName"><i class="fa-regular fa-user"></i> Your Name</label>
+                <input type="text" id="formName" class="form-control" placeholder="e.g. Juan dela Cruz" required>
+              </div>
+
+              <div class="form-group">
+                <label for="formEmail"><i class="fa-regular fa-envelope"></i> Your Email Address</label>
+                <input type="email" id="formEmail" class="form-control" placeholder="e.g. juan@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="formSubject"><i class="fa-solid fa-tag"></i> Subject</label>
+                <input type="text" id="formSubject" class="form-control" placeholder="Collaboration / Project Inquiry / Hello" required>
+              </div>
+
+              <div class="form-group">
+                <label for="formMessage"><i class="fa-regular fa-message"></i> Message</label>
+                <textarea id="formMessage" rows="5" class="form-control" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-glow btn-full">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#hero" class="footer-logo">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-text">Brax<span class="highlight">1000</span></span>
+          <span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-tagline">Crafting digital solutions with curiosity, logic, and modern code.</p>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://github.com/Brax1000" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/braxten-orline-urdelas-58003241a/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61590660964353" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="mailto:braxtenorlineurdelas@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="currentYear">2026</span> Braxten Orline P. Urdelas. Built with clean HTML, CSS & JavaScript.</p>
+        <div class="vercel-badge">
+          <i class="fa-solid fa-triangle-exclamation"></i> Ready to Deploy on Vercel
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-notification" id="toastNotification">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage">Copied to clipboard!</span>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL 1: INTERACTIVE C.C CALCULATOR DEMO       -->
+  <!-- ============================================== -->
+  <div class="modal-backdrop" id="calcModal">
+    <div class="modal-window glass-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-calculator highlight-cyan"></i>
+          <h4>C.C Calculator — Live Interactive Demo</h4>
+        </div>
+        <button class="modal-close-btn" id="closeCalcModal" aria-label="Close Calculator Demo">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="calculator-device glass-card">
+          <div class="calc-screen">
+            <div class="calc-history" id="calcHistory">0</div>
+            <div class="calc-display" id="calcDisplay">0</div>
+          </div>
+
+          <div class="calc-keypad">
+            <button class="calc-btn btn-func" data-action="clear">AC</button>
+            <button class="calc-btn btn-func" data-action="backspace"><i class="fa-solid fa-delete-left"></i></button>
+            <button class="calc-btn btn-func" data-action="percent">%</button>
+            <button class="calc-btn btn-op" data-action="op" data-val="/">÷</button>
+
+            <button class="calc-btn btn-num" data-val="7">7</button>
+            <button class="calc-btn btn-num" data-val="8">8</button>
+            <button class="calc-btn btn-num" data-val="9">9</button>
+            <button class="calc-btn btn-op" data-action="op" data-val="*">×</button>
+
+            <button class="calc-btn btn-num" data-val="4">4</button>
+            <button class="calc-btn btn-num" data-val="5">5</button>
+            <button class="calc-btn btn-num" data-val="6">6</button>
+            <button class="calc-btn btn-op" data-action="op" data-val="-">−</button>
+
+            <button class="calc-btn btn-num" data-val="1">1</button>
+            <button class="calc-btn btn-num" data-val="2">2</button>
+            <button class="calc-btn btn-num" data-val="3">3</button>
+            <button class="calc-btn btn-op" data-action="op" data-val="+">+</button>
+
+            <button class="calc-btn btn-num" data-val="0">0</button>
+            <button class="calc-btn btn-num" data-val=".">.</button>
+            <button class="calc-btn btn-func" data-action="sqrt">√x</button>
+            <button class="calc-btn btn-equal" data-action="equals">=</button>
+          </div>
+        </div>
+
+        <div class="modal-demo-info">
+          <h5><i class="fa-solid fa-circle-info"></i> Project Details:</h5>
+          <p>This is a live interactive simulation of Braxten's <strong>C.C Calculator</strong> project. You can click the buttons or type with your keyboard!</p>
+          <a href="https://github.com/Brax1000/C.C-Calculator" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan">
+            <i class="fa-brands fa-github"></i> View Full Repository on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL 2: C-FOUR BOMB DEFUSAL TERMINAL SIMULATOR -->
+  <!-- ============================================== -->
+  <div class="modal-backdrop" id="bombModal">
+    <div class="modal-window glass-card modal-terminal-window">
+      <div class="modal-header terminal-header">
+        <div class="window-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="modal-title-group">
+          <i class="fa-solid fa-terminal highlight-cyan"></i>
+          <h4>C-Four: Bomb Defusal Simulator [C Engine Emulation]</h4>
+        </div>
+        <button class="modal-close-btn" id="closeBombModal" aria-label="Close Terminal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body terminal-body-wrapper">
+        <div class="retro-terminal" id="terminalOutput">
+          <div class="term-line welcome-line">====================================================</div>
+          <div class="term-line welcome-line">   [C-FOUR: BOMB DEFUSAL SIMULATOR v1.0]           </div>
+          <div class="term-line welcome-line">   Developer: Braxten Orline P. Urdelas (Brax1000)  </div>
+          <div class="term-line welcome-line">====================================================</div>
+          <div class="term-line">[SYSTEM] Tactical C Engine initialized...</div>
+          <div class="term-line">[ALERT] Bomb activated! 4-digit code generated.</div>
+          <div class="term-line">[RULES] You have 5 defusal attempts. After each attempt, you receive clues.</div>
+          <div class="term-line">[HINT] Enter a 4-digit number (e.g. 1234) and hit Enter or submit below.</div>
+          <div class="term-divider"></div>
+        </div>
+
+        <div class="terminal-stats-bar">
+          <span class="term-stat"><i class="fa-solid fa-heart-pulse"></i> Attempts Left: <strong id="termAttempts">5</strong></span>
+          <span class="term-stat"><i class="fa-solid fa-stopwatch"></i> Status: <strong id="termStatus" class="highlight-cyan">ACTIVE</strong></span>
+          <button class="btn btn-xs btn-outline-cyan" id="termResetBtn"><i class="fa-solid fa-rotate-right"></i> Restart Simulation</button>
+        </div>
+
+        <form id="termInputForm" class="term-input-row">
+          <span class="term-prompt">agent@c-four:~$</span>
+          <input type="text" id="termInput" maxlength="4" placeholder="Enter 4-digit code..." autocomplete="off">
+          <button type="submit" class="btn btn-sm btn-cyan">DEFUSE</button>
+        </form>
+
+        <div class="modal-demo-info">
+          <a href="https://github.com/Brax1000/C-Four---Bomb-Defusal-Simulator" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan">
+            <i class="fa-brands fa-github"></i> View Original C Source Code
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL 3: HANGMAN QUICK ROUND SIMULATOR         -->
+  <!-- ============================================== -->
+  <div class="modal-backdrop" id="hangmanModal">
+    <div class="modal-window glass-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-brands fa-python highlight-cyan"></i>
+          <h4>Python Hangman Game — Quick Round</h4>
+        </div>
+        <button class="modal-close-btn" id="closeHangmanModal" aria-label="Close Hangman">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="hangman-game-container glass-card">
+          <div class="hangman-ascii-display" id="hangmanAscii">
+            <pre>
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========</pre>
+          </div>
+
+          <div class="hangman-word-slots" id="hangmanWordDisplay">_ _ _ _ _</div>
+          
+          <div class="hangman-status-bar">
+            <span>Lives Left: <strong id="hangmanLives" class="highlight-cyan">6</strong></span>
+            <span>Used: <strong id="hangmanGuessedLetters">None</strong></span>
+          </div>
+
+          <div class="hangman-keyboard" id="hangmanKeyboard"></div>
+          
+          <button class="btn btn-sm btn-outline-cyan" id="hangmanRestartBtn" style="margin-top: 15px;">
+            <i class="fa-solid fa-rotate-right"></i> Play Another Word
+          </button>
+        </div>
+
+        <div class="modal-demo-info">
+          <a href="https://github.com/Brax1000/Hangman-Game-in-Python" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan">
+            <i class="fa-brands fa-github"></i> View Python Hangman Source Code
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/particles.js"></script>
+  <script src="js/interactive-demos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
