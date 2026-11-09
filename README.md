@@ -49,4 +49,4 @@ braxten-portfolio/
 
 ---
 
-Designed with ❤️ for **Braxten Orline P. Urdelas**
+Designed by 👾 **Braxten Orline P. Urdelas**
