@@ -221,13 +221,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (termOutput) {
       termOutput.innerHTML = `
         <div class="term-line welcome-line">====================================================</div>
-        <div class="term-line welcome-line">   [C-FOUR: BOMB DEFUSAL SIMULATOR v1.0]           </div>
-        <div class="term-line welcome-line">   Developer: Braxten Orline P. Urdelas (Brax1000)  </div>
+        <div class="term-line welcome-line">   [C-FOUR: LAST CHANCE - TEAM GAMEDEV EDITION]    </div>
+        <div class="term-line welcome-line">   BSIT - 1C (TUP Manila) // Featuring C-Four2     </div>
+        <div class="term-line welcome-line">   Devs: Braxten Urdelas, John Hayden Nell, David Pansoy </div>
         <div class="term-line welcome-line">====================================================</div>
-        <div class="term-line">[SYSTEM] Tactical C Engine initialized...</div>
-        <div class="term-line">[ALERT] Bomb activated! 4-digit code generated.</div>
-        <div class="term-line">[RULES] You have 5 defusal attempts. After each attempt, you receive clues.</div>
-        <div class="term-line">[HINT] Enter a 4-digit number (e.g. 1234) and hit Enter or submit below.</div>
+        <div class="term-line">[SYSTEM] Tactical C-Four2 Engine initialized...</div>
+        <div class="term-line">[ALERT] Bomb armed! Deactivation protocol required.</div>
+        <div class="term-line">[RULES] You have 5 defusal attempts. Enter code to test radar clues.</div>
+        <div class="term-line">[HINT] Enter 4 digits (e.g. 1234) and submit code below.</div>
         <div class="term-divider"></div>
       `;
     }
