@@ -2344,3 +2344,345 @@ textarea.form-control {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ==========================================================================
+   TUP MANILA SHOWCASE & SLIDE-IN ANIMATIONS
+   ========================================================================== */
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Floating TUP Hero Badge */
+.floating-university-badge {
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1.15rem;
+  background: rgba(18, 18, 18, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(200, 30, 45, 0.25);
+  z-index: 4;
+  backdrop-filter: blur(20px);
+  transition: all var(--trans-smooth);
+}
+
+.floating-university-badge:hover {
+  transform: translateY(-54%) scale(1.04);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.85), 0 0 30px rgba(200, 30, 45, 0.5);
+}
+
+.tup-mini-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.tup-mini-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.tup-mini-name {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.tup-mini-sub {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  font-family: var(--font-mono);
+}
+
+/* TUP Highlight Card in About */
+.tup-highlight-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  border-left: 3px solid #b91c1c;
+}
+
+.tup-highlight-logo-wrapper {
+  flex-shrink: 0;
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 15px rgba(200, 30, 45, 0.2);
+}
+
+.tup-slide-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(200, 30, 45, 0.5));
+  transition: transform var(--trans-smooth);
+}
+
+.tup-highlight-card:hover .tup-slide-logo {
+  transform: rotate(20deg) scale(1.1);
+}
+
+/* Timeline TUP Header */
+.timeline-tup-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.tup-timeline-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 20px rgba(200, 30, 45, 0.35);
+  flex-shrink: 0;
+  transition: transform var(--trans-smooth);
+}
+
+.timeline-content:hover .tup-timeline-logo {
+  transform: rotate(15deg) scale(1.08);
+}
+
+/* Linux Distro Skill Pill Styling */
+.icon-linux {
+  color: #ffffff;
+}
+
+/* Project Tech Tag Enhancements */
+.amber-accent {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+/* ==========================================================================
+   ADVANCED MOBILE CELLPHONE OPTIMIZATIONS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 15.5px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .hero-section {
+    padding-top: 6.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.7rem;
+    line-height: 1.15;
+  }
+
+  .hero-title .surname {
+    font-size: 2.1rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .profile-card-wrapper {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .floating-university-badge {
+    position: static;
+    transform: none;
+    margin: 1rem auto 0 auto;
+    width: fit-content;
+  }
+
+  .floating-university-badge:hover {
+    transform: scale(1.04);
+  }
+
+  .floating-stat-badge.stat-top {
+    left: -5px;
+    top: -10px;
+  }
+
+  .floating-stat-badge.stat-bottom {
+    right: -5px;
+    bottom: -10px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    padding: 1.3rem;
+  }
+
+  .project-tech-stack {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tech-tag {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.65rem;
+  }
+
+  .project-footer {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .project-footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .filter-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.95rem;
+  }
+
+  .timeline-tup-header {
+    flex-direction: row;
+    gap: 0.85rem;
+  }
+
+  .tup-timeline-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .modal-window {
+    width: 95vw;
+    max-height: 92vh;
+    padding: 1.25rem;
+    margin: 1rem;
+  }
+
+  .calculator-device {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14.5px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-title .surname {
+    font-size: 1.75rem;
+  }
+
+  .hero-badge {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.9rem;
+  }
+
+  .profile-card-wrapper {
+    max-width: 290px;
+  }
+
+  .profile-image-container {
+    height: 260px;
+  }
+
+  .floating-stat-badge {
+    padding: 0.4rem 0.75rem;
+  }
+
+  .stat-num {
+    font-size: 0.95rem;
+  }
+
+  .stat-desc {
+    font-size: 0.68rem;
+  }
+
+  .skill-items-grid {
+    gap: 0.75rem;
+  }
+
+  .skill-pill {
+    padding: 0.75rem 0.95rem;
+    gap: 0.75rem;
+  }
+
+  .skill-name {
+    font-size: 0.92rem;
+  }
+
+  .skill-level {
+    font-size: 0.75rem;
+  }
+}

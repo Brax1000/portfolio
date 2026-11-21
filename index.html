@@ -170,10 +170,19 @@
                 </div>
               </div>
 
+              <!-- Floating TUP Manila Badge with Slide-In Animation -->
+              <div class="floating-university-badge glass-card animate-slide-in-right">
+                <img src="assets/tup-logo.png" alt="TUP Manila Logo" class="tup-mini-logo">
+                <div class="tup-mini-meta">
+                  <span class="tup-mini-name">TUP Manila</span>
+                  <span class="tup-mini-sub">BSIT Freshman • 1901</span>
+                </div>
+              </div>
+
               <div class="floating-stat-badge stat-bottom glass-card">
                 <div class="stat-icon"><i class="fa-solid fa-code-branch"></i></div>
                 <div class="stat-meta">
-                  <span class="stat-num">4+ Projects</span>
+                  <span class="stat-num">6+ Projects</span>
                   <span class="stat-desc">Open Source</span>
                 </div>
               </div>
@@ -257,6 +266,16 @@
           <!-- Highlight Cards Column -->
           <div class="about-cards-column">
             
+            <div class="stat-highlight-card glass-card tup-highlight-card animate-slide-in-right">
+              <div class="tup-highlight-logo-wrapper">
+                <img src="assets/tup-logo.png" alt="TUP Manila" class="tup-slide-logo">
+              </div>
+              <div class="highlight-info">
+                <h4>TUP Manila • BSIT</h4>
+                <p>Technological University of the Philippines — The premier state university for technology education.</p>
+              </div>
+            </div>
+
             <div class="stat-highlight-card glass-card">
               <div class="highlight-icon blue-gradient-box">
                 <i class="fa-solid fa-laptop-code"></i>
@@ -503,6 +522,15 @@
                 </div>
               </div>
 
+              <!-- Linux Distros -->
+              <div class="skill-pill">
+                <i class="fa-brands fa-linux icon-linux"></i>
+                <div class="skill-pill-meta">
+                  <span class="skill-name">Linux Distros</span>
+                  <span class="skill-level">Mint, Arch, Debian, Kali, Fedora</span>
+                </div>
+              </div>
+
               <div class="skill-pill">
                 <i class="fa-solid fa-terminal"></i>
                 <div class="skill-pill-meta">
@@ -531,22 +559,102 @@
 
         <!-- Project Filter Buttons -->
         <div class="project-filters">
-          <button class="filter-btn active" data-filter="all">All Projects (4)</button>
+          <button class="filter-btn active" data-filter="all">All Projects (6)</button>
           <button class="filter-btn" data-filter="web">Web & Frontend</button>
-          <button class="filter-btn" data-filter="systems">C / C++ Systems</button>
-          <button class="filter-btn" data-filter="python">Python & Games</button>
+          <button class="filter-btn" data-filter="systems">C & Systems</button>
+          <button class="filter-btn" data-filter="python">Python & Apps</button>
         </div>
 
         <!-- Projects Grid -->
         <div class="projects-grid">
 
-          <!-- PROJECT 1: C.C CALCULATOR -->
+          <!-- PROJECT 1: LIBRARY MANAGEMENT SYSTEM (PYTHON) -->
+          <div class="project-card glass-card tilt-card" data-category="python">
+            <div class="project-card-glow"></div>
+            
+            <div class="project-preview-header">
+              <div class="project-tag-badge py-tag">
+                <i class="fa-brands fa-python"></i> Python Desktop App
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-icon-visual teal-accent">
+                <i class="fa-solid fa-book-bookmark"></i>
+              </div>
+
+              <h3 class="project-title">Library Management System</h3>
+              <p class="project-subtitle">Inventory, Borrowers, Loans & Overdue Tracker</p>
+
+              <p class="project-description">
+                A local Python desktop application engineered for managing library inventory, borrowers, book loans, returns, and automatic overdue calculation. Built for reliable record keeping and easy file storage.
+              </p>
+
+              <div class="project-tech-stack">
+                <span class="tech-tag"><i class="fa-brands fa-python"></i> Python 3</span>
+                <span class="tech-tag"><i class="fa-solid fa-database"></i> Local Storage</span>
+                <span class="tech-tag"><i class="fa-solid fa-users"></i> Borrowers</span>
+                <span class="tech-tag"><i class="fa-solid fa-calendar-check"></i> Overdue Logic</span>
+              </div>
+
+              <div class="project-footer">
+                <a href="https://github.com/Brax1000/library-management-system" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan btn-full">
+                  <i class="fa-brands fa-github"></i>
+                  <span>View Repository</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: PERSONAL PORTFOLIO WEBSITE -->
           <div class="project-card glass-card tilt-card" data-category="web">
             <div class="project-card-glow"></div>
             
             <div class="project-preview-header">
               <div class="project-tag-badge web-tag">
-                <i class="fa-brands fa-js"></i> Web Application
+                <i class="fa-solid fa-globe"></i> Web Portfolio • Responsive
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-icon-visual blue-accent">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+
+              <h3 class="project-title">Developer Portfolio</h3>
+              <p class="project-subtitle">Monochrome Glassmorphism & Interactive Canvas</p>
+
+              <p class="project-description">
+                My personal web portfolio built from the ground up with high-contrast luxury glassmorphism, responsive mobile optimization, live HTML5 particle constellations, and interactive embedded simulators.
+              </p>
+
+              <div class="project-tech-stack">
+                <span class="tech-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
+                <span class="tech-tag"><i class="fa-brands fa-css3-alt"></i> Modern CSS</span>
+                <span class="tech-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                <span class="tech-tag"><i class="fa-solid fa-mobile-screen"></i> Mobile First</span>
+              </div>
+
+              <div class="project-footer">
+                <a href="https://github.com/Brax1000/portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan">
+                  <i class="fa-brands fa-github"></i>
+                  <span>Source Code</span>
+                </a>
+                <a href="#hero" class="btn btn-sm btn-primary">
+                  <i class="fa-solid fa-arrow-up"></i>
+                  <span>Explore Site</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: C.C CALCULATOR (JAVASCRIPT) -->
+          <div class="project-card glass-card tilt-card" data-category="web">
+            <div class="project-card-glow"></div>
+            
+            <div class="project-preview-header">
+              <div class="project-tag-badge web-tag">
+                <i class="fa-brands fa-js"></i> Frontend Build
               </div>
               <div class="project-actions-quick">
                 <button class="icon-action-btn open-calc-demo" title="Try Live Calculator Demo">
@@ -561,34 +669,71 @@
               </div>
 
               <h3 class="project-title">C.C Calculator</h3>
-              <p class="project-subtitle">Scientific Calculator & Expression Parser</p>
+              <p class="project-subtitle">Arithmetic & Scientific Expression Engine</p>
 
               <p class="project-description">
-                Developed a full-featured scientific calculator supporting basic and advanced mathematical operations. 
-                Features dynamic expression handling, keyboard shortcuts, robust error checking, and a custom futuristic user interface.
+                A simple and responsive calculator project built with modern frontend JavaScript. Supports full keyboard shortcuts, clean expression evaluation, and a sleek interactive modal simulator.
               </p>
 
               <div class="project-tech-stack">
+                <span class="tech-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
                 <span class="tech-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
                 <span class="tech-tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
-                <span class="tech-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
-                <span class="tech-tag"><i class="fa-solid fa-keyboard"></i> Event Listeners</span>
+                <span class="tech-tag"><i class="fa-solid fa-keyboard"></i> Shortcuts</span>
               </div>
 
               <div class="project-footer">
-                <a href="https://github.com/Brax1000/C.C-Calculator" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan">
+                <a href="https://github.com/Brax1000/C.C-Calculator-" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan">
                   <i class="fa-brands fa-github"></i>
                   <span>Source Code</span>
                 </a>
                 <button class="btn btn-sm btn-primary open-calc-demo">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  <span>Test Calculator</span>
+                  <i class="fa-solid fa-play"></i>
+                  <span>Live Demo</span>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- PROJECT 2: C-FOUR BOMB DEFUSAL (TEAM GAMEDEV) -->
+          <!-- PROJECT 4: LOST & FOUND TEXTFILE PROJECT (C) -->
+          <div class="project-card glass-card tilt-card" data-category="systems">
+            <div class="project-card-glow"></div>
+            
+            <div class="project-preview-header">
+              <div class="project-tag-badge c-tag">
+                <i class="fa-solid fa-box-archive"></i> C Systems • Campus Project
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-icon-visual indigo-accent">
+                <i class="fa-solid fa-folder-open"></i>
+              </div>
+
+              <h3 class="project-title">Lost & Found Campus Log</h3>
+              <p class="project-subtitle">Textfile-Based Record System & Status Management</p>
+
+              <p class="project-description">
+                A campus lost and found logging system in C. Logs item details, location found, timestamps, and reporting student with dynamic status transitions between unclaimed, claimed, and returned.
+              </p>
+
+              <div class="project-tech-stack">
+                <span class="tech-tag"><i class="fa-solid fa-c"></i> C Language</span>
+                <span class="tech-tag"><i class="fa-solid fa-file-lines"></i> File I/O</span>
+                <span class="tech-tag"><i class="fa-solid fa-list-check"></i> Status Tracking</span>
+                <span class="tech-tag"><i class="fa-solid fa-users"></i> Campus Log</span>
+              </div>
+
+              <div class="project-footer">
+                <a href="https://github.com/Blixxar/Lost-and-Found-Textfile-Project" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan btn-full">
+                  <i class="fa-brands fa-github"></i>
+                  <span>View on GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 5: C-FOUR BOMB DEFUSAL (C & RAYLIB) -->
           <div class="project-card glass-card tilt-card" data-category="systems">
             <div class="project-card-glow"></div>
             
@@ -609,19 +754,15 @@
               </div>
 
               <h3 class="project-title">C-Four: Bomb Defusal</h3>
-              <p class="project-subtitle">Minigame Tactical Challenge • Team GameDev Edition</p>
+              <p class="project-subtitle">Tactical Minigame & CRT Terminal Simulator</p>
 
               <p class="project-description">
-                A tactical minigame built in C by our BSIT-1C team (Braxten, Nell, Pansoy). 
-                Players must deduce the secret deactivation code within a chosen difficulty range 
-                <strong>(1-10, 1-50, 1-100, 1-500)</strong> before the live 90-second countdown timer expires. 
-                Features <strong>C-Four2 (Refined Edition)</strong> powered by Raylib with retro 80x30 CRT themes, audio, and dynamic radar clues!
+                A tactical minigame built in C by our BSIT-1C team. Players deduce the secret deactivation code across multiple difficulty ranges before the live 90-second countdown timer expires.
               </p>
 
               <div class="project-tech-stack">
                 <span class="tech-tag"><i class="fa-solid fa-c"></i> C Language</span>
                 <span class="tech-tag"><i class="fa-solid fa-stopwatch"></i> 90s Countdown</span>
-                <span class="tech-tag"><i class="fa-solid fa-arrows-left-right"></i> Dynamic Ranges</span>
                 <span class="tech-tag"><i class="fa-solid fa-gamepad"></i> Raylib Engine</span>
                 <span class="tech-tag"><i class="fa-solid fa-users"></i> BSIT-1C Team</span>
               </div>
@@ -639,89 +780,40 @@
             </div>
           </div>
 
-          <!-- PROJECT 3: BASIC CALCULATOR (C++) -->
+          <!-- PROJECT 6: EMERGENCY ROAD HAZARD LOG (C) -->
           <div class="project-card glass-card tilt-card" data-category="systems">
             <div class="project-card-glow"></div>
             
             <div class="project-preview-header">
-              <div class="project-tag-badge cpp-tag">
-                <i class="fa-solid fa-code"></i> C++ Application
+              <div class="project-tag-badge c-tag">
+                <i class="fa-solid fa-triangle-exclamation"></i> C Systems • Incident Logger
               </div>
             </div>
 
             <div class="project-body">
-              <div class="project-icon-visual indigo-accent">
-                <i class="fa-solid fa-square-root-variable"></i>
+              <div class="project-icon-visual amber-accent">
+                <i class="fa-solid fa-road-barrier"></i>
               </div>
 
-              <h3 class="project-title">Basic Calculator</h3>
-              <p class="project-subtitle">Command-Line Arithmetic Processing Engine</p>
+              <h3 class="project-title">Emergency Road Hazard Log</h3>
+              <p class="project-subtitle">Incident Reporting & Keyword Locator Engine</p>
 
               <p class="project-description">
-                Engineered a performant command-line arithmetic calculator in C++ to practice fundamental programming structures, 
-                user input parsing, operator precedence, type safety, and modular function decomposition.
+                A textfile-based emergency road hazard report system built in C. Features logging road-blocks and safety hazards, active status review, and a keyword search engine locator.
               </p>
 
               <div class="project-tech-stack">
-                <span class="tech-tag"><i class="fa-solid fa-laptop-code"></i> C++</span>
-                <span class="tech-tag"><i class="fa-solid fa-plus-minus"></i> Arithmetic Operations</span>
-                <span class="tech-tag"><i class="fa-solid fa-shield-halved"></i> Input Validation</span>
-                <span class="tech-tag"><i class="fa-solid fa-terminal"></i> CLI</span>
+                <span class="tech-tag"><i class="fa-solid fa-c"></i> C Language</span>
+                <span class="tech-tag"><i class="fa-solid fa-magnifying-glass"></i> Keyword Locator</span>
+                <span class="tech-tag"><i class="fa-solid fa-file-lines"></i> File Records</span>
+                <span class="tech-tag"><i class="fa-solid fa-shield-halved"></i> Safety System</span>
               </div>
 
               <div class="project-footer">
-                <a href="https://github.com/Brax1000/BasicCalc_CPP" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan btn-full">
+                <a href="https://github.com/pasambaclark-ship-it/Emergency-Road-Hazard-Log" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan btn-full">
                   <i class="fa-brands fa-github"></i>
-                  <span>View Repository on GitHub</span>
+                  <span>View on GitHub</span>
                 </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- PROJECT 4: HANGMAN GAME (PYTHON) -->
-          <div class="project-card glass-card tilt-card" data-category="python">
-            <div class="project-card-glow"></div>
-            
-            <div class="project-preview-header">
-              <div class="project-tag-badge py-tag">
-                <i class="fa-brands fa-python"></i> Python Game
-              </div>
-              <div class="project-actions-quick">
-                <button class="icon-action-btn open-hangman-demo" title="Play Quick Hangman Round">
-                  <i class="fa-solid fa-font"></i> Play Word Game
-                </button>
-              </div>
-            </div>
-
-            <div class="project-body">
-              <div class="project-icon-visual teal-accent">
-                <i class="fa-solid fa-puzzle-piece"></i>
-              </div>
-
-              <h3 class="project-title">Hangman Game</h3>
-              <p class="project-subtitle">Interactive Word-Guessing State Machine</p>
-
-              <p class="project-description">
-                Constructed a classic terminal Hangman game in Python to reinforce game state management, 
-                string manipulation, letter guessing history, life counters, and dynamic ASCII art rendering.
-              </p>
-
-              <div class="project-tech-stack">
-                <span class="tech-tag"><i class="fa-brands fa-python"></i> Python 3</span>
-                <span class="tech-tag"><i class="fa-solid fa-font"></i> String Algorithms</span>
-                <span class="tech-tag"><i class="fa-solid fa-diagram-project"></i> State Machine</span>
-                <span class="tech-tag"><i class="fa-solid fa-heart"></i> Life Counter</span>
-              </div>
-
-              <div class="project-footer">
-                <a href="https://github.com/Brax1000/Hangman-Game-in-Python" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan">
-                  <i class="fa-brands fa-github"></i>
-                  <span>Source Code</span>
-                </a>
-                <button class="btn btn-sm btn-primary open-hangman-demo">
-                  <i class="fa-solid fa-play"></i>
-                  <span>Play Hangman</span>
-                </button>
               </div>
             </div>
           </div>
@@ -772,11 +864,16 @@
               <div class="timeline-item">
                 <div class="timeline-dot current"></div>
                 <div class="timeline-content glass-card">
-                  <span class="timeline-period current-badge">2026 - Present • CURRENT</span>
-                  <h4 class="timeline-degree">Bachelor of Science in Information Technology (BSIT)</h4>
-                  <p class="timeline-institution">
-                    <i class="fa-solid fa-university"></i> Technological University of the Philippines - Manila
-                  </p>
+                  <div class="timeline-tup-header animate-slide-in-left">
+                    <img src="assets/tup-logo.png" alt="TUP Manila Logo" class="tup-timeline-logo">
+                    <div>
+                      <span class="timeline-period current-badge">2026 - Present • CURRENT</span>
+                      <h4 class="timeline-degree">Bachelor of Science in Information Technology (BSIT)</h4>
+                      <p class="timeline-institution">
+                        <i class="fa-solid fa-university"></i> Technological University of the Philippines - Manila
+                      </p>
+                    </div>
+                  </div>
                   <p class="timeline-desc">
                     Freshman year focusing on computer programming foundations, algorithm design, software methodologies, 
                     and active participation in the student developer ecosystem.
@@ -1020,32 +1117,6 @@
       </div>
     </section>
   </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-brand">
-        <a href="#hero" class="footer-logo">
-          <span class="logo-bracket">&lt;</span>
-          <span class="logo-text">Brax<span class="highlight">1000</span></span>
-          <span class="logo-bracket">/&gt;</span>
-        </a>
-        <p class="footer-tagline">Crafting digital solutions with curiosity, logic, and modern code.</p>
-      </div>
-
-      <div class="footer-socials">
-        <a href="https://github.com/Brax1000" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/braxten-orline-urdelas-58003241a/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61590660964353" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="mailto:braxtenorlineurdelas@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
-      </div>
-
-      <div class="footer-bottom">
-        <p>© <span id="currentYear">2026</span> Braxten Orline P. Urdelas. Built with clean HTML, CSS & JavaScript.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
 
   <!-- TOAST NOTIFICATION CONTAINER -->
   <div class="toast-notification" id="toastNotification">
