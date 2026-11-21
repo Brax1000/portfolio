@@ -2686,3 +2686,115 @@ textarea.form-control {
     font-size: 0.75rem;
   }
 }
+
+
+/* ==========================================================================
+   SENIOR FRONTEND UPGRADES: IMPACT CARDS, 3-COLUMN SKILLS & COPY UX
+   ========================================================================== */
+
+/* 3-Column Skills Grid */
+.skills-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  align-items: stretch;
+}
+
+@media (max-width: 1080px) {
+  .skills-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Project Impact Box (What it does + Tech used + Key takeaway) */
+.project-impact-box {
+  margin: 1.1rem 0;
+  padding: 0.95rem 1.15rem;
+  background: rgba(10, 10, 10, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.impact-line {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #d1d5db;
+  margin: 0;
+}
+
+.impact-line strong {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Project Mode Badge (CLI vs Live) */
+.project-mode-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e5e7eb;
+}
+
+.project-mode-badge.live-pulse i {
+  color: #10b981;
+  font-size: 0.55rem;
+  animation: pulse-dot 1.8s infinite;
+}
+
+/* Contact Copy UX */
+.email-highlight-item {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(20, 20, 20, 0.9);
+}
+
+.email-highlight-item:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 25px rgba(255, 255, 255, 0.12);
+}
+
+.btn-copy-action {
+  position: relative;
+  transition: all var(--trans-fast);
+}
+
+.copy-btn.copied {
+  background: #ffffff;
+  color: #000000 !important;
+  border-color: #ffffff;
+  transform: scale(1.08);
+}
+
+.copy-btn.copied i {
+  color: #000000 !important;
+}
+
+/* Performance and 60fps Optimization */
+.glass-card {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+@media (max-width: 768px) {
+  .glass-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(14, 14, 14, 0.92);
+  }
+}

@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // =========================================================================
-  // 5. COPY TO CLIPBOARD WITH TOAST FEEDBACK
+  // 5. COPY TO CLIPBOARD WITH TOAST & BUTTON FEEDBACK
   // =========================================================================
   const toastNotification = document.getElementById('toastNotification');
   const toastMessage = document.getElementById('toastMessage');
@@ -134,19 +134,63 @@ document.addEventListener('DOMContentLoaded', () => {
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
       toastNotification.classList.remove('show');
-    }, 3000);
+    }, 2800);
+  }
+
+  function copyTextToClipboard(text, callback) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(() => {
+        callback(true);
+      }).catch(() => {
+        fallbackCopy(text, callback);
+      });
+    } else {
+      fallbackCopy(text, callback);
+    }
+  }
+
+  function fallbackCopy(text, callback) {
+    try {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      const successful = document.execCommand('copy');
+      document.body.removeChild(textArea);
+      callback(successful);
+    } catch (err) {
+      callback(false);
+    }
   }
 
   document.querySelectorAll('.copy-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
       const textToCopy = btn.getAttribute('data-copy');
-      if (navigator.clipboard && textToCopy) {
-        navigator.clipboard.writeText(textToCopy).then(() => {
-          showToast(`Copied "${textToCopy}" to clipboard!`);
-        }).catch(() => {
+      if (!textToCopy) return;
+
+      copyTextToClipboard(textToCopy, (success) => {
+        if (success) {
+          const originalHTML = btn.innerHTML;
+          btn.innerHTML = '<i class="fa-solid fa-check highlight-cyan"></i>';
+          btn.classList.add('copied');
+
+          const friendlyLabel = textToCopy.includes('@') 
+            ? 'Email copied to clipboard!' 
+            : `Copied "${textToCopy}" to clipboard!`;
+          showToast(friendlyLabel);
+
+          setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.classList.remove('copied');
+          }, 2000);
+        } else {
           showToast('Failed to copy. Please copy manually.');
-        });
-      }
+        }
+      });
     });
   });
 
